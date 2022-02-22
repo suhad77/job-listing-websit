@@ -11,7 +11,9 @@ function App() {
   useEffect(() => setjobs(Data), [] );
   return (
     <div className="App">
-      <h1> Hello Suhad! </h1>
+      <header bg-teal-500 mb-12>
+        <img src='./images/bg-header-desktop.svg' alt='header' className='w-full' />
+      </header>
       {
         jobs.length === 0 ? (
           <p>jobs are fetching...</p>
