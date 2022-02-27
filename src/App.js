@@ -27,6 +27,9 @@ function App() {
 
     return tags.some(tag => filters.includes(tag));;
   }
+  const handelTagClick = (tag) =>{
+    setFilters([...filters,tag]);
+  }
 
   const filtereJobs = jobs.filter(filterFunc);
 
@@ -39,7 +42,13 @@ function App() {
         jobs.length === 0 ? (
           <p>jobs are fetching...</p>
         ) : (
-          jobs.map((job) => <JobBoardCompornet job={job} key={job.id} />)
+          jobs.map((job) => (
+          <JobBoardCompornet 
+          job={job}
+          key={job.id} 
+          handelTagClick={handelTagClick}
+          />
+          ))
         )
       }
     

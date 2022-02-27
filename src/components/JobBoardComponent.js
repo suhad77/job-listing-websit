@@ -1,22 +1,9 @@
 import React from 'react';
 
-// let x ={
-//     "id": 5,
-//     "company": "Loop Studios",
-//     "logo": "/images/loop-studios.svg",
-//     "new": false,
-//     "featured": false,
-//     "position": "Software Engineer",
-//     "role": "Fullstack",
-//     "level": "Midweight",
-//     "postedAt": "1w ago",
-//     "contract": "Full Time",
-//     "location": "Worldwide",
-//     "languages": ["JavaScript"],
-//     "tools": ["Ruby", "Sass"]
-//   },
 
-const JobBoardCompornet = ({job:{company,logo,isNew,featured,position,role,level,postedAt,contract,location,languages,tools,}}) =>{
+
+const JobBoardCompornet = ({job:{company,logo,isNew,featured,position,role,level,postedAt,contract,location,languages,tools,},
+    handelTagClick}) =>{
     const tags = [ role, level]
 
     if(languages) {
@@ -46,7 +33,7 @@ const JobBoardCompornet = ({job:{company,logo,isNew,featured,position,role,level
            </div>
            <div className=' flex items-center justify-end ml-auto'>
                 {
-                    tags ? tags.map((tag) => <span className='text-teal-500 bg-teal-100 font-bold m-2 p-2 rounded '>{tag}</span>) : ''}
+                    tags ? tags.map((tag) => <span onClick={() => handelTagClick(tag)} className='text-teal-500 bg-teal-100 font-bold m-2 p-2 rounded '>{tag}</span>) : ''}
                 
            </div>
         </div>
