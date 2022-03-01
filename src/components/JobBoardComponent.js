@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const JobBoardCompornet = ({job:{company,logo,isNew,featured,position,role,level,postedAt,contract,location,languages,tools,},
     handelTagClick}) =>{
     const tags = [ role, level]
